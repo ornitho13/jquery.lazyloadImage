@@ -42,9 +42,7 @@
     }
     var browsers = browsersData();
     $.fn.lazyloadImage = function () {
-        
-        
-        
+
         return $(this).each(function(){
 			//get original src
 			//get screen height
@@ -56,15 +54,14 @@
 			$this.css('opacity', 0);
 			
 			$window.on('load', function(){
-                console.log(browsers);
-				if (browsers.ie && parseInt(browsers.version, 10) <= 8) {
+                if (browsers.ie && parseInt(browsers.version, 10) <= 8) {
+                	//change by css class with animation in order to remove this part
 					img.attr('src', originalSrc).animate({
 						opacity : 1
 					}, 'slow');
 					loaded = true;
 				} else {
-                    console.log(screenHeight, $(document).scrollTop(), imgPosition)
-					var htmlBodyTop = $(document).scrollTop() + screenHeight;
+                    var htmlBodyTop = $(document).scrollTop() + screenHeight;
 					if (imgPosition.top <= htmlBodyTop) {
 						//on charge la page 
 						img.attr('src', originalSrc).animate({
