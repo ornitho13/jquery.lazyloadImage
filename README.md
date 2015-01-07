@@ -1,8 +1,8 @@
 # jquery.lazyloadImage
 jquery plugin for lazy load image
 
-How to use it :
-
+<h2>How to use it :</h2>
+```
 <html>
     <head>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -30,10 +30,10 @@ How to use it :
         </noscript>
     </body>
 </html>
+```
+<h2>NOTE :</h2> 
 
-NOTE : 
-
-- don't forget the "lazy" class on <img>
-- use <noscript> for seo issue
+- don't forget the "lazy" class on ```<img>```
+- use ```<noscript>``` for seo issue
 - better to define height and width, for browser performance issue and to avoid resize of your page
 
