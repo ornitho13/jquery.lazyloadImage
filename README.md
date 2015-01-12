@@ -6,7 +6,7 @@ jquery plugin for lazy load image
 <html>
     <head>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <script src="lazyloadImage.js"></script>   
+        <script src="jquery.lazyLoadImage.js"></script>   
         <script>
             $(document).ready(function(){
                 $('.lazy').lazyloadImage();
