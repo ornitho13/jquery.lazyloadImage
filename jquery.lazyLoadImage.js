@@ -42,18 +42,19 @@
     }
     var browsers = browsersData();
     $.fn.lazyloadImage = function () {
+        var $this = $(this);
+        $(window).on('load', function(){
+            $this.each(function(){
+                //get original src
+                //get screen height
+                var $this = $(this), originalSrc = $this.data('original'), img = $this, 
+                    $window = $(window),
+                    screenHeight = $(window).height(), 
+                    imgPosition = $this.offset(), 
+                    loaded = false;
+                $this.css('opacity', 0);
 
-        return $(this).each(function(){
-			//get original src
-			//get screen height
-			var $this = $(this), originalSrc = $this.data('original'), img = $this, 
-                $window = $(window),
-				screenHeight = $(window).height(), 
-				imgPosition = $this.offset(), 
-				loaded = false;
-			$this.css('opacity', 0);
 			
-			$window.on('load', function(){
                 if (browsers.ie && parseInt(browsers.version, 10) <= 8) {
                 	//change by css class with animation in order to remove this part
 					img.attr('src', originalSrc).animate({
@@ -85,5 +86,7 @@
 				}
 			});
 		});
+        
+        return $(this);
     }
 }());
